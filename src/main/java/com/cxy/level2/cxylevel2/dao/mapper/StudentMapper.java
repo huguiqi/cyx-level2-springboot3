@@ -26,5 +26,6 @@ public interface StudentMapper {
     List<Student> select(Student student);
 
 
-
+    @Select("select * from student")
+    List<Student> selectAll();
 }

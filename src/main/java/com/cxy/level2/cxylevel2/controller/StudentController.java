@@ -4,9 +4,7 @@ import com.cxy.level2.cxylevel2.service.StudentService;
 import com.cxy.level2.cxylevel2.dto.StudentDto;
 import com.cxy.level2.cxylevel2.entity.Student;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +18,7 @@ import java.util.List;
  * @summary:
  */
 @RestController
+@CrossOrigin
 public class StudentController {
 
     private final StudentService studentService;
@@ -31,6 +30,11 @@ public class StudentController {
     @PostMapping(value = "/list",produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Student> list(@RequestBody StudentDto studentDto){
             return studentService.list(studentDto);
+    }
+
+    @GetMapping(value ="student",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Student> student(){
+        return studentService.allStudents();
     }
 
 }

@@ -29,4 +29,8 @@ public class StudentService {
     public List<Student> list(StudentDto studentDto) {
         return studentMapper.select(studentDto.toEntity());
     }
+
+    public List<Student> allStudents() {
+        return studentMapper.selectAll();
+    }
 }

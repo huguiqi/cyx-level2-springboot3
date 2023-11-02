@@ -18,6 +18,16 @@ public class Student implements Serializable {
     private String sex;
     private Date birth;
 
+    private String photoUrl;
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
     public Long getId() {
         return id;
     }

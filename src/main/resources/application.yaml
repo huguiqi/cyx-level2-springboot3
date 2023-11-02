@@ -9,6 +9,8 @@ spring:
     show-sql: true
 mybatis:
   type-aliases-package: com.cxy.level2.dao.mapper
+  configuration:
+    map-underscore-to-camel-case: true
 
 server:
   port: 9999
