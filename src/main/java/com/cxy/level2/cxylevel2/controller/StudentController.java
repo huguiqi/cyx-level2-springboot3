@@ -1,0 +1,36 @@
+package com.cxy.level2.cxylevel2.controller;
+
+import com.cxy.level2.cxylevel2.service.StudentService;
+import com.cxy.level2.cxylevel2.dto.StudentDto;
+import com.cxy.level2.cxylevel2.entity.Student;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @version v1
+ * @Author: sam.hu (huguiqi@zaxh.cn)
+ * @Copyright (c) 2023, zaxh Group All Rights Reserved.
+ * @since: 2023/11/02/20:53
+ * @summary:
+ */
+@RestController
+public class StudentController {
+
+    private final StudentService studentService;
+
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
+    @PostMapping(value = "/list",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Student> list(@RequestBody StudentDto studentDto){
+            return studentService.list(studentDto);
+    }
+
+}

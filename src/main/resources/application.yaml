@@ -1,0 +1,17 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.199:3306/STUDENT_DB
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+mybatis:
+  type-aliases-package: com.cxy.level2.dao.mapper
+
+server:
+  port: 9999
+logging:
+  level:
+    com.cxy.level2.cxylevel2.dao: debug
