@@ -1,8 +1,8 @@
 package com.cxy.level2.cxylevel2.dao.mapper;
 
+import com.cxy.level2.cxylevel2.dto.StudentDto;
 import com.cxy.level2.cxylevel2.entity.Student;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -28,4 +28,14 @@ public interface StudentMapper {
 
     @Select("select * from student")
     List<Student> selectAll();
+
+
+    @Insert("insert into student(name,sex,birth,photo_url) values(#{name},#{sex},#{birth},#{photoUrl})")
+    int insert(Student student);
+
+    @Delete("delete from student where id=#{id}")
+    void deleteById(Long id);
+
+    @Update("update from student set name=#{name}, sex=#{}, birth=#{birth}, photo_url=#{photoUrl} where id=#{id}")
+    int update(StudentDto studentDto);
 }

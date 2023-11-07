@@ -1,6 +1,7 @@
 package com.cxy.level2.cxylevel2.dto;
 
 import com.cxy.level2.cxylevel2.entity.Student;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -61,5 +62,11 @@ public class StudentDto implements Serializable {
         Student entity = new Student();
         BeanUtils.copyProperties(this,entity);
         return entity;
+    }
+
+    public boolean hasAdd() {
+        if (this.id == null)
+            return true;
+        return false;
     }
 }

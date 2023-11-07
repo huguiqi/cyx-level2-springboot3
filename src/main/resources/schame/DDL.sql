@@ -30,4 +30,7 @@ CREATE TABLE `student` (
                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
+ALTER TABLE `STUDENT_DB`.`student`
+    MODIFY COLUMN `birth` datetime NULL DEFAULT '' AFTER `sex`;
+
 

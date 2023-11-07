@@ -33,4 +33,15 @@ public class StudentService {
     public List<Student> allStudents() {
         return studentMapper.selectAll();
     }
+
+    public void add(StudentDto studentDto) {
+        if (studentDto.hasAdd())
+            studentMapper.insert(studentDto.toEntity());
+        else
+            studentMapper.update(studentDto);
+    }
+
+    public void removeById(Long id) {
+        studentMapper.deleteById(id);
+    }
 }

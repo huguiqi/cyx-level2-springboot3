@@ -37,4 +37,17 @@ public class StudentController {
         return studentService.allStudents();
     }
 
+    @PostMapping(value ="student")
+    public String student(@RequestBody StudentDto studentDto){
+        studentService.add(studentDto);
+        return "ok";
+    }
+
+
+    @DeleteMapping(value ="student/{id}")
+    public String student(@PathVariable("id") Long id){
+        studentService.removeById(id);
+        return "ok";
+    }
+
 }
