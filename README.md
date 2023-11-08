@@ -1,2 +1,3 @@
 # cyx-level2-springboot3
 基于springboot3.0的程序员二级考试练习后台
+因为springboot3要求Java11以上，考试环境可能是jdk8,所以考试环境只能使用springboot2
