@@ -24,7 +24,10 @@ public class StudentDto implements Serializable {
     private Long id;
     private String name;
     private String sex;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date birth;
+
+    private String photoUrl;
 
     public Long getId() {
         return id;
@@ -56,6 +59,14 @@ public class StudentDto implements Serializable {
 
     public void setBirth(Date birth) {
         this.birth = birth;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
     public Student toEntity() {

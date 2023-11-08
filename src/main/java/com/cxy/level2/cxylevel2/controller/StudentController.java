@@ -39,7 +39,7 @@ public class StudentController {
 
     @PostMapping(value ="student")
     public String student(@RequestBody StudentDto studentDto){
-        studentService.add(studentDto);
+        studentService.addOrUpdate(studentDto);
         return "ok";
     }
 

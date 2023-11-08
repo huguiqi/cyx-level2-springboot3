@@ -36,6 +36,6 @@ public interface StudentMapper {
     @Delete("delete from student where id=#{id}")
     void deleteById(Long id);
 
-    @Update("update from student set name=#{name}, sex=#{}, birth=#{birth}, photo_url=#{photoUrl} where id=#{id}")
+    @Update("update student set name=#{name}, sex=#{sex}, birth=#{birth}, photo_url=#{photoUrl} where id=#{id}")
     int update(StudentDto studentDto);
 }

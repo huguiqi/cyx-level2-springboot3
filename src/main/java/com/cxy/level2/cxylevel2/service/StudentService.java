@@ -3,7 +3,6 @@ package com.cxy.level2.cxylevel2.service;
 import com.cxy.level2.cxylevel2.dao.mapper.StudentMapper;
 import com.cxy.level2.cxylevel2.dto.StudentDto;
 import com.cxy.level2.cxylevel2.entity.Student;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +33,7 @@ public class StudentService {
         return studentMapper.selectAll();
     }
 
-    public void add(StudentDto studentDto) {
+    public void addOrUpdate(StudentDto studentDto) {
         if (studentDto.hasAdd())
             studentMapper.insert(studentDto.toEntity());
         else
