@@ -7,8 +7,11 @@ import com.cxy.level2.cxylevel2.entity.Dept;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -49,5 +52,21 @@ public class DeptService {
 
     public int removeByIds(String ids) {
         return deptMapper.deleteByIds(ids);
+    }
+
+    public String findByName(String name) {
+        List<String> depts = deptMapper.selectByName(name);
+        if (CollectionUtils.isEmpty(depts)){
+            return "";
+        }
+        return depts.get(0);
+    }
+
+    public List<String> deptOptions() {
+        List<Dept> depts = deptMapper.selectAll();
+        if (CollectionUtils.isEmpty(depts)){
+            return Collections.emptyList();
+        }
+        return depts.stream().map(dept -> dept.getName()).collect(Collectors.toList());
     }
 }

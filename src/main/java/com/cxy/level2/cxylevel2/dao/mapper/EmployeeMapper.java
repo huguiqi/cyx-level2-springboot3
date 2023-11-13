@@ -42,4 +42,7 @@ public interface EmployeeMapper {
 
     @Update("update employee set name=#{name}, dept=#{dept}, position=#{position} where id=#{id}")
     int update(Employee employee);
+
+    @Update("update employee set salary= salary + #{salary} where id=#{id}")
+    int updateSalary(Employee employee);
 }

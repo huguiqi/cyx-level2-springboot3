@@ -45,6 +45,17 @@ public class DeptController {
         return deptService.addOrUpdate(deptDto);
     }
 
+    @GetMapping(value ="/name")
+    public String queryByName(String name){
+        return deptService.findByName(name);
+    }
+
+
+    @GetMapping(value ="/options")
+    public List<String> queryDeptOptions(){
+        return deptService.deptOptions();
+    }
+
 
     @DeleteMapping(value ="/removes")
     public int dept(@RequestParam("ids") String ids){

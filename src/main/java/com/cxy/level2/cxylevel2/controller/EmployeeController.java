@@ -2,6 +2,7 @@ package com.cxy.level2.cxylevel2.controller;
 
 import com.cxy.level2.cxylevel2.dto.EmployeeDto;
 import com.cxy.level2.cxylevel2.dto.QueryPage;
+import com.cxy.level2.cxylevel2.dto.RaiseSalaryApplyDto;
 import com.cxy.level2.cxylevel2.entity.Employee;
 import com.cxy.level2.cxylevel2.service.EmployeeService;
 import com.github.pagehelper.PageInfo;
@@ -49,6 +50,12 @@ public class EmployeeController {
     @DeleteMapping(value ="/removes")
     public int dept(@RequestParam("ids") String ids){
         return employeeService.removeByIds(ids);
+    }
+
+
+    @PostMapping(value ="/raiseSalaryApply")
+    public int saveRaiseSalaryApply(@RequestBody RaiseSalaryApplyDto raiseSalaryApplyDto){
+        return employeeService.saveRaiseSalaryApply(raiseSalaryApplyDto);
     }
 
 }

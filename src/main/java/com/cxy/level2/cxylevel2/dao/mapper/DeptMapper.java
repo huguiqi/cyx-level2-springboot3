@@ -40,4 +40,7 @@ public interface DeptMapper {
 
     @Update("update dept set name=#{name}, manager=#{manager} where id=#{id}")
     int update(Dept dept);
+
+    @Select("select manager from dept where `name`= #{name}")
+    List<String> selectByName(String name);
 }
